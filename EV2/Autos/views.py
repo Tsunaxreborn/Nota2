@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Automovil
 
-
+# Create your views here.
 def post_list(request):
-    post = Automovil.objetcs.filter(Fecha_publicacion__lte=timezone.now()).order_by('Fecha_publicacion')
-    return render(request, 'templates/Autos/post_list.html', {'posts':post})
+    posts = Automovil.objects.filter(Fecha_publicacion__lte=timezone.now()).order_by('Fecha_publicacion')
+    return render(request, 'Autos/post_list.html', {'posts': posts})
+

@@ -8,10 +8,10 @@
     <title>Venta de vehículos</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/webAutos.css' %}">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'css/AutoIndex.css' %}">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
+   
     <script> 
         $(document).ready(function(){
             $("#flip").click(function(){
@@ -20,7 +20,32 @@
         });
         </script>
 </head>
-<body>
+-->
+<body style="background-color: aquamarine">
+    <header id="asd">
+    <h1>Automav</h1>
+</header>
+    <hr>
+    {% for post in posts %}
+    <div id="dev">
+        <hr>
+            <p>Marca: {{ post.Marca}}</p>
+            <p>Modelo: {{ post.Modelo}}</p>
+            <p>Año del automovil: {{ post.Año_automovil}}</p>
+            <p>Color: {{ post.Color}}</p>
+            <p>Numero de puertas: {{ post.Numero_puertas}}</p>
+            <p>Descripcion: {{ post.Descripcion}}</p>
+            <p>Fecha de publicación: {{ post.Fecha_publicacion }}</p>
+            <p>Precio: {{ post.Precio|linebreaksbr }}</p>
+            
+            <button class="button">Cotizar precio</button>
+             {% endfor %}
+    </div>
+
+
+    
+
+    <!--
     <header>
         <nav>
             <div id="arriba"><h1 id="Log">Venta de Vehículos</h1></div>
@@ -37,7 +62,6 @@
     </header>
 <hr> <br>
 
-<!--<button class ="button2">Regístrese acá</button>-->
 
 <br>
     
@@ -82,7 +106,7 @@
     </td>
     </table>
 
-
+-->
 
 </body>
 </html>
